@@ -64,9 +64,9 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-  apt-get update 
-  apt-get install -y apache2 
-  apt-get install -y apt-transport-https ca-certificates curl software-properties-common 
+  sudo apt-get update 
+  sudo apt-get install -y apache2 
+  sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common 
   #sudo apt-get update
   #sudo apt-get install python-dev python-setuptools
   #sudo easy_install pip
@@ -79,11 +79,11 @@ Vagrant.configure("2") do |config|
   #git clone https://github.com/edsonbenites/html-docs-hello-world.git /var/www/html-docs-hello-world
   #git clone https://github.com/edsonbenites/devops-aula13.git /var/www/devops-aula13
   rm -rf /var/www/introducao-html-css
-  git clone https://github.com/edsonbenites/introducao-html-css.git /var/www/introducao-html-css
-  git clone https://github.com/edsonbenites/Apache2-vagrant.git /etc/apache2/sites-enable
+  git clone https://github.com/douglasbarbosa90/introducao-html-css.git /var/www/introducao-html-css
+  git clone https://github.com/douglasbarbosa90/Apache2-vagrant.git /etc/apache2/sites-enable
   # git clone https://github.com/mattdesl/simple-html-index.git /var/www/simple-html-index
   rm /etc/apache2/sites-enabled/000-default.conf
-  git clone https://github.com/edsonbenites/Apache2-vagrant.git /etc/apache2/sites-enabled
+  git clone https://github.com/douglasbarbosa90/Apache2-vagrant.git /etc/apache2/sites-enabled
   service apache2 restart 
 
   SHELL
